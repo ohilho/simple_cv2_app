@@ -7,7 +7,7 @@ from argparse import ArgumentParser
 def main():
     # get arguemnts. 
     parser = ArgumentParser("frame_extractor")
-    parser.add_argument("--path", type=str, required=True, help="path to the video file")
+    parser.add_argument("--path", type=str, required=True, help="path to the image directory")
     args = parser.parse_args()
     print(f"iterating {args.path} ...")
 
