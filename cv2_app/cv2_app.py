@@ -3,6 +3,7 @@
 import cv2
 from pathlib import Path
 from .image_loader import ImageLoader
+import numpy as np
 
 
 class CV2AppException(Exception):
@@ -27,6 +28,7 @@ class CV2App:
         self.current_seq = None
         # singleton name during the process.
         self.winname = str(CV2App.num_windows)
+        cv2.imshow(self.winname, np.zeros((100, 100, 3), dtype=np.uint8))
         CV2App.num_windows += 1
 
     def set_image_loader(self, image_loader: ImageLoader) -> None:
