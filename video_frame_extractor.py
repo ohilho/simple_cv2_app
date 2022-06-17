@@ -1,6 +1,8 @@
 #! /usr/bin/python3
 
-from cv2_app.cv2_app import CV2App, VideoFrameLoader, ImageLogger
+from cv2_app.cv2_app import CV2App
+from cv2_app.image_loader import VideoFrameLoader
+from cv2_app.image_logger import ImageLogger
 from argparse import ArgumentParser
 import cv2
 

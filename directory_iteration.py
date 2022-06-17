@@ -1,6 +1,7 @@
 #! /usr/bin/python3
 
-from cv2_app.cv2_app import CV2App, DirectoryLoader
+from cv2_app.cv2_app import CV2App
+from cv2_app.image_loader import DirectoryLoader
 from argparse import ArgumentParser
     
 def main():

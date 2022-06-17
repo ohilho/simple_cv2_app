@@ -2,7 +2,7 @@
 
 import cv2
 from pathlib import Path
-from image_loader import ImageLoader
+from .image_loader import ImageLoader
 
 
 class CV2AppException(Exception):
