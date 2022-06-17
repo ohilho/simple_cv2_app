@@ -6,7 +6,7 @@ from argparse import ArgumentParser
 import cv2
 
 def image_resizer(app:CV2App):
-    app.current_image = cv2.resize(app.current_image,dsize=None, fx=0.5,fy=0.5)
+    app.processed_image = cv2.resize(app.current_image,dsize=None, fx=0.5,fy=0.5)
     
 def main():
     # get arguemnts. 

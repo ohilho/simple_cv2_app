@@ -23,6 +23,7 @@ class CV2App:
         self.key_event_callbacks = []
         self.render_event_callbacks = []
         self.current_image = None
+        self.processed_image = None
         self.current_seq = None
         # singleton name during the process.
         self.winname = str(CV2App.num_windows)
@@ -51,6 +52,7 @@ class CV2App:
         try:
             for seq, image in enumerate(self.image_loader):
                 self.current_image = image
+                self.processed_image = image
                 self.current_seq = seq
 
                 # render event callbacks excution befor rendering
@@ -58,7 +60,7 @@ class CV2App:
                     event["callback"](*event["params"])
 
                 # show image
-                cv2.imshow(self.winname, self.current_image)
+                cv2.imshow(self.winname, self.processed_image)
                 title = self.image_loader.title() + f" seq: {seq}"
                 cv2.setWindowTitle(self.winname, title)
 

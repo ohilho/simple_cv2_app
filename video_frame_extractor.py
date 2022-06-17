@@ -7,7 +7,7 @@ from argparse import ArgumentParser
 import cv2
 
 def image_resizer(app:CV2App):
-    app.current_image = cv2.resize(app.current_image,dsize=None, fx=0.5,fy=0.5)
+    app.processed_image = cv2.resize(app.current_image,dsize=None, fx=0.5,fy=0.5)
     
 def main():
     # get arguemnts. 
@@ -36,7 +36,7 @@ def main():
     # Image resizer. 
     view.register_render_callback(image_resizer,[view]) 
     # Image logger
-    view.register_render_callback(lambda x:lg.log_image_with_sequence(x.current_seq,x.current_image),[view]) 
+    view.register_render_callback(lambda x:lg.log_image_with_sequence(x.current_seq,x.processed_image),[view]) 
     
     # play video with 1 ms interval between each frame. 
     view.start(1, frame_controled_by_key=False)
